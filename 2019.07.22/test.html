@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document2</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <style>
+      *{
+        height:300px;
+      }
+      .slider-box{
+        width:500px;
+        overflow:hidden;
+        position:absolute;
+      }
+
+      .slider{
+        width:1500px;
+        position:absolute;
+      }
+
+      .slider div{
+        width:500px;
+        float:left;
+        text-align:center;
+        font-size:50px;
+        color:white;
+        line-height:270px;
+        font-weight:bold;
+      }
+      .slider > div:nth-child(1){
+        background:#FF9683;
+      }
+      .slider > div:nth-child(2){
+        background:#FFD0C7;
+      }
+      .slider > div:nth-child(3){
+        background:#FF775F;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-box">
+      <div class="slider">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </div>
+    <script>
+      $(function(){
+
+      setInterval(animation, 2000);
+
+      });
+
+        var movelength = 500;
+        var num = 2;
+        var now = 0;
+
+        function animation(){
+          $(".slider").animate({left:-(movelength*now)},1000, function(){
+          now == 2? now = 0: now++;
+        });
+      }
+    </script>
+  </body>
+</html>
